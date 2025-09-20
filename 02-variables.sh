@@ -7,11 +7,11 @@
 #Description: Practicing variables
 ######################################
 
-echo "What are you learning?"
+echo "What is your name?"
 
-read COURSE
+read PERSON
 
-echo "The course is $COURSE"
+echo "Hello $PERSON"
 
 
 
