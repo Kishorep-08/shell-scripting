@@ -47,3 +47,4 @@ if [ $? -ne 0 ]
     VALIDATE $? "python"
 else 
     echo -e "Python already exist.......$Y SKIPPING $N"
+fi
