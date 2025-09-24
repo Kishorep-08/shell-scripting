@@ -5,5 +5,5 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-echo -e "$Y Hello Team"
+echo -e "$Y Hello Team $N"
 echo "This is Kishore"
