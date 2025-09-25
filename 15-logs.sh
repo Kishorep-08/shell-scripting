@@ -13,7 +13,7 @@ mkdir -p $LOGS_FOLDER
 
 if [ $USERID -ne 0 ]
 then
-    echo -e "$R Error $N: Install with root privileges"
+    echo -e "$R Error $N: Install with root privileges" | tee -a $LOG_FILE
     exit 1
 fi
 
@@ -21,10 +21,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$R Error $N: Installing $2 got failed"
+        echo -e "$R Error $N: Installing $2 got failed" | tee -a $LOG_FILE
         exit 1
     else
-        echo -e "Installating $2......$G Success $N"
+        echo -e "Installating $2......$G Success $N" | tee -a $LOG_FILE
     fi
 }
 
@@ -35,7 +35,7 @@ then
     dnf install mysql -y &>> $LOG_FILE
     VALIDATE $? "Mysql"
 else
-    echo -e "Mysql already exist.......$Y SKIPPING $N"
+    echo -e "Mysql already exist.......$Y SKIPPING $N" | tee -a $LOG_FILE
 fi
 
 dnf list installed nginx &>> $LOG_FILE
@@ -44,7 +44,7 @@ then
     dnf install nginx -y &>> $LOG_FILE
     VALIDATE $? "Nginx"
 else
-    echo -e "Nginx already exist.......$Y SKIPPING $N"
+    echo -e "Nginx already exist.......$Y SKIPPING $N" | tee -a $LOG_FILE
 fi
 
 dnf list installed python3 &>> $LOG_FILE
@@ -53,5 +53,5 @@ then
     dnf install python3 -y &>> $LOG_FILE
     VALIDATE $? "python"
 else 
-    echo -e "Python already exist.......$Y SKIPPING $N"
+    echo -e "Python already exist.......$Y SKIPPING $N" | tee -a $LOG_FILE
 fi
