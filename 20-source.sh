@@ -2,4 +2,4 @@
 
 echo "Welcome to $NAME"
 
-echo "PID of $0 script is $$"
+echo "PID of 20-script.sh script is $$"
