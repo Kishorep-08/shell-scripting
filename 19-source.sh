@@ -6,4 +6,4 @@ echo "Welcome to $NAME"
 
 echo "PID of $0 is $$"
 
-source sh 20-source.sh
+source ./20-source.sh
