@@ -16,4 +16,5 @@ while [ $number -le 10 ]
 do 
     echo "Number is : $number"
     number=$(($number+1))
+    sleep 2
 done
