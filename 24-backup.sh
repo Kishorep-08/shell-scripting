@@ -31,4 +31,11 @@ fi
 if [ ! -d $SOURCE_DIR ]
 then
     echo -e "$R Source directory: $SOURCE_DIR doesn't exist $N" | tee -a $LOG_FILE
+    exit 1
+fi
+
+if [ ! -d $DEST_DIR ]
+then
+    echo -e "$R Destination directory: $DEST_DIR doesn't exist $N" | tee -a $LOG_FILE
+    exit 1
 fi
