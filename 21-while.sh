@@ -1,9 +1,9 @@
 #!/bin/bash
 
-num=1
+num=10
 
-while [ $num -le 5 ]
+while [ $num -ge 5 ]
 do
     echo "Number is: $num"
-    num=$(($num+1))
+    num=$(($num-1))
 done
