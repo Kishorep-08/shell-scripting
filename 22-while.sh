@@ -9,12 +9,12 @@
 
 
 
-# while IFS= read -r line
-# do
-#     echo "Line is: $line"
-# done < file-2.txt
-
-for line in $(cat file-2.txt)
+while IFS= read -r line
 do
     echo "Line is: $line"
-done
+done < file-2.txt
+
+# for line in $(cat file-2.txt)
+# do
+#     echo "Line is: $line"
+# done
