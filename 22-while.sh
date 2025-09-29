@@ -1,6 +1,6 @@
 #!/bin/bash
 
-########### Script to print each line one by one in a file ###########
+##Script to print each line one by one in a file
 
 while read content      #each line is stored in content and printed
 do
