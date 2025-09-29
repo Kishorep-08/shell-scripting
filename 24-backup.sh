@@ -5,6 +5,8 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+set -eo pipefail
+
 USERID=$(id -u)
 LOGS_FOLDER="/var/log/shell-script-logs"
 SCRIPT_NAME=$(echo "$0" | awk -F. '{print$1}')
