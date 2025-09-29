@@ -43,7 +43,7 @@ fi
 
 FILES=$(find $SOURCE_DIR -type f -name "*.log" -mtime +$DAYS)
 
-if [ ! -z $FILES ]
+if [ ! -z "${FILES}" ]
 then 
     echo "Files found $FILES"
     TIMESTAMP=$(date +%F-%H-%M)
