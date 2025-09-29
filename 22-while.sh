@@ -9,7 +9,7 @@
 
 
 
-while IFS= read -r line
+while IFS= read line
 do
     echo "Line is: $line"
 done < file-2.txt
