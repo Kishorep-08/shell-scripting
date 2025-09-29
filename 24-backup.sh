@@ -11,6 +11,7 @@ SCRIPT_NAME=$(echo "$0" | awk -F. '{print$1}')
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 SOURCE_DIR=$1
 DEST_DIR=$2
+DAYS=${3:-14}
 
 mkdir -p $LOGS_FOLDER
 
@@ -39,3 +40,32 @@ then
     echo -e "$R Destination directory: $DEST_DIR doesn't exist $N" | tee -a $LOG_FILE
     exit 1
 fi
+
+FILES=$(find $SOURCE_DIR -type f -name "*.log" -mtime +$DAYS)
+
+if [ ! -z $FILES ]
+then 
+    echo "Files found $FILES"
+    TIMESTAMP=$(date +%F-%H-%M)
+    ZIP_FILE-NAME=$DEST_DIR/app-logs-$TIMESTAMP.zip
+    echo "Zip file name: $ZIP_FILE_NAME"
+    find $SOURCE_DIR -type f -name "*.log" -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"
+
+    if [ -f $ZIP_FILE_NAME ]
+    then
+        echo -e "Archival.......$G Success $N"
+        while IFS= read -r file
+        do
+           echo "Deleting file: $file"
+           rm -rf $file
+           echo "Deleted file: $file"
+        done <<< $FILES
+    else
+        echo -e "Archival ... $R FAILURE $N"
+        exit 1
+    fi
+
+else
+    echo -e "No files to archive.......$Y Skipping $N"
+fi
+     
