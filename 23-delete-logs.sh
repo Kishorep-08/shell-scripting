@@ -13,7 +13,7 @@ mkdir -p $LOGS_FOLDER
 
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
-SOURCE_DIR=/home/ec2-user/app-logs
+SOURCE_DIR=/home/ec2-user/apps-logs
 
 if [ ! -d $SOURCE_DIR ]
 then
