@@ -30,5 +30,5 @@ fi
 
 if [ ! -d $SOURCE_DIR ]
 then
-    echo -e "$R $SOURCE_DIR doesn't exist $N" | tee -a $LOG_FILE
+    echo -e "$R Source directory: $SOURCE_DIR doesn't exist $N" | tee -a $LOG_FILE
 fi
