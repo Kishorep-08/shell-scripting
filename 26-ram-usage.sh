@@ -4,7 +4,7 @@ THRESHOLD=2
 TOTAL_RAM=$(free -m | awk '{print $2}')
 AVAILABLE_RAM=$(free -m | awk '{print $7}')
 
-USED_RAM=$(( ( ("$TOTAL_RAM" - "$AVAILABLE_RAM") * 100 ) / $TOTAL_RAM ))
+USED_RAM=$(( ( (TOTAL_RAM - AVAILABLE_RAM) * 100 ) / TOTAL_RAM ))
 
 if [ $USED_RAM -gt $THRESHOLD ]
 then
