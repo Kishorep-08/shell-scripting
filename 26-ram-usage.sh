@@ -15,7 +15,7 @@ fi
 
 echo "Message body: $MESSAGE"
 
-sh mail.sh "info@joindevops.com" "High Disk Usage Alert" "High RAM usage" "$MESSAGE" "$IP_ADDRESS" "DevOps Team"
+sh mail.sh "kishore.pkdp@gmail.com" "High Disk Usage Alert" "High RAM usage" "$MESSAGE" "$IP_ADDRESS" "DevOps Team"
 
 # TO_ADDRESS=$1
 # SUBJECT=$2
