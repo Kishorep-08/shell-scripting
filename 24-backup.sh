@@ -9,8 +9,9 @@ set -eo pipefail
 
 USERID=$(id -u)
 LOGS_FOLDER="/var/log/shell-script-logs"
-SCRIPT_NAME=$(echo "$0" | awk -F. '{print$1}')
-LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+# SCRIPT_NAME=$(echo "$0" | awk -F. '{print$1}')
+# LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE=$LOGS_FOLDER/backup.log
 SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14}
