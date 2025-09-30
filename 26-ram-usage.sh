@@ -1,5 +1,7 @@
 #!/bin/bash
 
+IP_ADDRESS=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
+
 THRESHOLD=2
 TOTAL_RAM=$(free -m | awk '/Mem:/ {print $2}')
 AVAILABLE_RAM=$(free -m | awk '/Mem:/ {print $7}')
