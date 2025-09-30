@@ -10,7 +10,7 @@ USED_RAM=$(( ( (TOTAL_RAM - AVAILABLE_RAM) * 100 ) / TOTAL_RAM ))
 
 if [ $USED_RAM -gt $THRESHOLD ]
 then
-    MESSAGE=$(echo -e " \e[31m Warning: Percentage of total RAM used: $USED_RAM % \e[0m ")
+    MESSAGE=$(echo "Warning: Percentage of total RAM used: $USED_RAM %")
 fi
 
 echo "Message body: $MESSAGE"
