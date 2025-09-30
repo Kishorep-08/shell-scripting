@@ -14,3 +14,12 @@ then
 fi
 
 echo "Message body: $MESSAGE"
+
+sh mail.sh "info@joindevops.com" "High Disk Usage Alert" "High RAM usage" "$MESSAGE" "$IP_ADDRESS" "DevOps Team"
+
+# TO_ADDRESS=$1
+# SUBJECT=$2
+# ALERT_TYPE=$3
+# MESSAGE_BODY=$4
+# IP_ADDRESS=$5
+# TO_TEAM=$6
