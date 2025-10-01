@@ -29,3 +29,28 @@ do
     rm -rf $filepath
     echo "Deleted file: $filepath"
 done <<< $FILES_TO_DELETE
+
+# ###########################################
+# Q. How do you write a script which deletes log files older than 14 days from a specific directory ?
+# A. 
+#     I will check if the given source directory exists or not. If directory exists, i will proceed.
+#     Then i will search for the files which are older than 14 days using find command.
+#     Then, using while loop i delete all files
+#     My script would look like this:
+
+#     if [ ! -d source_dir ]
+#     then
+#         echo "No directory"
+#         exit 1
+#     fi
+#     FILES_TO_DELETE=$(find $SOURCE_DIR -type f -name:"*.log" -mtime +14)
+    
+#     #Here i would inititate while loop
+
+#     while IFS= read -r file
+#     do
+#         rm -rf $file
+#         echo "$file: deleted"
+#     done <<< $FILES_TO_DELETE
+###############################################
+    

@@ -71,3 +71,34 @@ then
 else
     echo -e "No files to archive.......$Y Skipping $N"
 fi
+
+# ########################################################################
+# Q. How to archive old log files?
+# A.
+#    Since this is archival we would need source dir and a dest dir to place zipped files.
+#    Firstly, I would check if both these directories or not. If exists, i will proceed.
+#    Then i would find for the files in source directory using find command.
+#    If files found, i would zip them into dest dir using zip command.
+#    Then i would check if zip file got create or not.
+#    If created, i would delete those files fromm source.
+
+#    My script would look like this:
+
+#    if [ ! -d source_dir ]; then
+#     echo "source dir not found"
+#     exit 1
+#    fi
+
+#    if [ ! -d dest_dir ]; then
+#     echo "dest dir not found"
+#     exit 1
+#    fi
+
+#    FILES_FOUND=$(find source_dir -type f -name "*.log" -mtime +14)
+
+#    if [ !z $FILES_FOUND ]
+#    then
+#     zip $FILES_FOUND $DEST_DIR/app-logs-$TIMESTAMP.zip
+#    fi 
+
+   
